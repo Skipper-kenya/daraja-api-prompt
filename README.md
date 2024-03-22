@@ -13,4 +13,4 @@
 ## More details?
 
 - If you haven't heard of safaricom's daraja-api, check out their documentation on the link below
-  `[daraja](https://developer.safaricom.co.ke/APIs)` .Daraja is a really cool mpesa Api that gives developers room to do magic.
+  [daraja](https://developer.safaricom.co.ke/APIs).Daraja is a really cool mpesa Api that gives developers room to do magic.

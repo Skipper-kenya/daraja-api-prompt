@@ -1,6 +1,8 @@
 const request = require("request");
+const dotenv = require("dotenv");
+dotenv.config();
 
-const accessToken = (req, res, next) => {
+const accessToken = async (req, res, next) => {
   try {
     const url =
       "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
@@ -10,7 +12,7 @@ const accessToken = (req, res, next) => {
 
     request(
       {
-        url,
+        url: url,
         headers: {
           Authorization: "Basic " + auth,
         },
@@ -19,9 +21,10 @@ const accessToken = (req, res, next) => {
         if (error) {
           console.log(error.message);
         } else {
+          console.log(body);
           req.access_token = JSON.parse(body).access_token;
-          res.send(JSON.parse(body));
-          return next();
+          res.send(JSON.parse(body).access_token);
+          next();
         }
       }
     );

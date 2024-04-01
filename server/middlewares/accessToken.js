@@ -21,7 +21,6 @@ const accessToken = async (req, res, next) => {
         if (error) {
           console.log(error.message);
         } else {
-          console.log(body);
           req.access_token = JSON.parse(body).access_token;
           res.send(JSON.parse(body).access_token);
           next();
